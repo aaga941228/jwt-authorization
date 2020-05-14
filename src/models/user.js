@@ -7,7 +7,7 @@ const user = new Schema({
   password: String
 })
 
-user.methods.encruptPassword = async (password) => {
+user.methods.encryptPassword = async (password) => {
   const salt = await bcrypt.genSalt(10)
   return bcrypt.hash(password, salt)
 }
